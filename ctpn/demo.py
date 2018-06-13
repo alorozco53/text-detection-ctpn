@@ -60,7 +60,10 @@ def ctpn(sess, net, image_name, serialize=True):
     timer = Timer()
     timer.tic()
 
-    img = cv2.imread(image_name)
+    if isinstance(image_name, str):
+        img = cv2.imread(image_name)
+    else:
+        img = image_name
     img, scale = resize_im(img, scale=TextLineCfg.SCALE, max_scale=TextLineCfg.MAX_SCALE)
     scores, boxes = test_ctpn(sess, net, img)
 
