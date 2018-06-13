@@ -16,8 +16,11 @@ The `ctpn` function defined in [demo.py](ctpn/demo.py) will return a list with e
 which indicates the bounding coordinates of each box surrounding text in an image:
 
 `(min_x, min_y)`+-------------+
+
 	            |             |
+
 				|             |
+
 				+-------------+ `(max_x, max_y)`
 
 ---
