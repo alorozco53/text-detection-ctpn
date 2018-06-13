@@ -11,4 +11,7 @@ dist/
 *.c[cod]
 *.so
 *.swp
-
+*.jpg
+*.jpeg
+*.gif
+*.png
