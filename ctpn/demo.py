@@ -69,13 +69,13 @@ def ctpn(sess, net, image_name, serialize=True):
 
     textdetector = TextDetector()
     boxes = textdetector.detect(boxes, scores[:, np.newaxis], img.shape[:2])
+
+    if serialize:
+        draw_boxes(img, image_name, boxes, scale)
     timer.toc()
     print(('Detection took {:.3f}s for '
            '{:d} object proposals').format(timer.total_time, boxes.shape[0]))
-    if serialize:
-        draw_boxes(img, image_name, boxes, scale)
-    else:
-        return list(box_point_generator(img, boxes, scale))
+    return list(box_point_generator(img, boxes, scale))
 
 
 
